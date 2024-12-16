@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+        <link rel="stylesheet" href="style/10-RPS.CSS">
+    <title>game</title>
+</head>
+
+<body>
+    <h1>ROCK PAPER SCISSOR </h1>
+    <button onclick="
+        userMove= 'rock'; 
+        playGame(userMove);    
+        "
+        class="move-button"
+    >
+        <img src="img/rock-emoji.png" class="icon">
+    </button>
+    <button class="move-button" onclick="
+         userMove= 'paper'; 
+         playGame(userMove);           
+    ">
+        <img src="img/paper-emoji.png" class="icon">
+    </button>
+    <button class="move-button" onclick="
+            userMove= 'scissor'; 
+            playGame(userMove);            
+        ">
+        <img src="img/scissor-emoji.png" class="icon">   
+    </button>
+    <p class="js-MOVE result " ></p>
+    <p class="js-res result" ></p>
+    <p class="js-Score "> </p>
+    
+    <button onclick="
+        score.losses=0;
+        score.wins=0;
+        score.ties=0;
+        localStorage.removeItem('scr');
+        updateScore();
+    "  
+    id="reset-button"
+    >RESET SCORE</button>
+
+    <script src="scripts/10-RPS.js">
+    </script>
+</body>
+</html>

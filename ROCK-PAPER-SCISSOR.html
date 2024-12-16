@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        button{
+            margin-left: 5px;
+            background-color: rgb(242, 255, 0);
+            border-radius: 10%;
+            height: 70px;
+            width: 60px;
+            color: #000;;
+        }
+    </style>
+    <title>game</title>
+</head>
+
+<body>
+    <button onclick="
+        userMove= 'rock'; 
+
+          getResult(userMove);
+         
+        
+    ">
+        rock
+    </button>
+    <button onclick="
+         userMove= 'paper'; 
+         
+         res= getResult(userMove);
+         
+         
+    ">
+        paper
+    </button>
+    <button onclick="
+            userMove= 'scissor'; 
+           
+             res= getResult(userMove);
+             
+        ">
+        scissor    
+    </button>
+
+    <script>
+        let userMove;
+        let compMove;
+        let res;
+        
+        function getCompMove(){
+                let num= Math.random();
+            if (num>=0 && num<1/3) 
+            {
+                compMove='rock';      
+            }
+            else if(num>=1/3 && num<2/3){
+                compMove='paper';
+            }
+            else{
+                compMove='scissor';
+            }
+                return compMove;
+            }
+
+
+        function getResult(userMove){
+            let result;
+            compMove=getCompMove();
+            if(userMove==='rock'){
+                if(compMove==='rock'){
+                    result='tie';
+                }
+                else if(compMove==='paper'){
+                    result='lose';
+                }
+                else{
+                    result='win';
+                }
+            }
+            else if(userMove==='paper'){
+                    if(compMove==='rock'){
+                        result='win';
+                    }
+                    else if(compMove==='paper'){
+                        result='tie';
+                    }
+                    else{
+                        result='lose';
+                    }
+                
+            }
+            else {
+                if(compMove==='rock'){
+                    result='win';
+                }
+                else if(compMove==='paper'){
+                    result='lose';
+                }
+                else{
+                    result='tie';
+                }
+            }
+            alert(`computer chose: ${compMove}  you chose ${userMove} \n you ${result} `);
+        }    
+
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <tile>objects</tile>
+
+</head>
+    <body> 
+        <script>
+         
+            /* an object is just another type of value in javascript.
+              stored in form of property value pair*/
+              const product={
+                name: "cotton socks",
+                price: 500.0,
+            
+              }
+              console.log(product);
+              console.log(typeof product);
+              console.log(typeof(product));
+              console.log(typeof product.name);
+              //change a property outside using dot operator 
+              product.price=900;
+               // create an property ouside
+             product.Available= true;
+             console.log(product);
+
+              //can have objects inside an object(like rating)
+            //   can also have function inside an object which is then called a method.
+            //   eg: console is an object and log is a function stored inside console so it a method;
+            //   /
+               
+             const product2={
+                name: 'laptop',
+                price:75000,
+                color : 'black',
+                rating: {
+                    stars: 4.5,
+                    count: 120
+                } ,
+                funky : function print(){
+                    console.log('method= function inside obj')
+                }
+             }
+
+             delete product2.color;
+             console.log(product2);
+             console.log(product2.rating);
+             console.log(product2.rating.stars);
+             product2.funky();
+             console.log(typeof Math);
+             console.log(typeof Math.random);
+
+            let v= JSON.stringify(product2);
+             console.log(typeof v);
+             console.log(v);
+
+             let obj= JSON.parse(v);
+             console.log(obj);
+
+             console.log('Harshita'.length);
+             console.log('Harshita'.toUpperCase());
+
+             const obj2= product2;
+
+             obj2.price=5;
+             console.log(product2);
+        </script>
+    </body>
+    <p>SOME BUILT IN ONBJECTS ARE: 1.JSON <br>2. Local storage <br>3.Math <br> 4. console</p>
+    <p>JOSN: It is understood by other languages also(php,python,JAVA).it is a built-in object that stands for javascript object Notation similar to javascript objects but cannot have function.<br> object to JSON=> stringify(obj)<br>JSON to object => parse(str)
+        <hr></p>
+        <p>THE OBJECT ARE ACTUALLY REFERENCES (similar to pointers in C++ )<br>Equality Checks:
+
+            Equality comparisons between object variables in JavaScript are based on their references, not their content (similar to comparing pointers in C++).<hr>
+        </p><p>Autoboxing is the automatic conversion that the Java compiler makes between the primitive types and their corresponding object wrapper classes. Eg  autoboxing a string  to get properties like length and toUpperCase.<hr><p>In JavaScript, null and undefined are two distinct types that represent different values. By definition, undefined means a variable has been declared but has not yet been assigned a value, whereas null is an assignment value, meaning that a variable has been declared and given the value of null . 
+    </html>

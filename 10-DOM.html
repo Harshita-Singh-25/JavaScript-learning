@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .subs{
+            border: none;
+            background-color: black;
+            color: white;
+            margin: 20px;
+            margin-bottom: 30px;
+            padding: left 15px; 
+            padding-right: 15px;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: small;
+            cursor: pointer;
+        }
+        .subsd{
+            background-color: rgb(240, 240, 240);
+            color: black;
+        }
+        .cost-input{
+            font-size: 15px;
+            padding: 9px;
+        }
+        .calculateCost{
+            background-color: green;
+            border: none;
+            color: white;
+            padding: 10px 18px; 
+            font-size: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="subs"
+        onclick="
+            subscribing();
+          "
+    >SUBSCRIBE</button>
+    <p>Cost Calculator</p>
+    <p> if price < 40 , tax = 5%</p>
+    <p>if price >=40 , tax= 10%</p>
+
+        <input placeholder="Enter the price of order "  class="js-cost-input cost-input" 
+        onkeydown=" handleKeyDown(event)"
+    > 
+    <!-- <input placeholder="Enter the price of order "  id="js-cost-input  onkeydown="
+        console.log(`typing..`) ;
+        console.log(event);  ">  -->
+    <button class="calculateCost" onclick="
+        calculate();
+    "> CALCULATE </button>
+    <p class="js-display"> </p>
+    <script>
+
+        function handleKeyDown(event){
+           // console.log(event);
+            //console.log(typeof event);
+            if(event.key==='Enter'){
+                calculate();
+            }
+        }
+        function subscribing(){
+            let ButtonSubElement=document.querySelector('.subs')
+           
+            if (ButtonSubElement.innerText==="SUBSCRIBE") {
+                ButtonSubElement.innerText='subscribed';
+                ButtonSubElement.classList.add('subsd');
+            }
+            else{
+                ButtonSubElement.innerHTML='SUBSCRIBE';
+                ButtonSubElement.classList.remove('subsd')
+            }
+        }
+        function calculate(){
+            const inputElement= document.querySelector('.js-cost-input');
+
+            let cost= Number(inputElement.value);
+            if(cost<40){
+                cost=cost+cost*(0.05);
+            }
+            else{
+                cost=cost+cost*(0.1);
+            }
+            cost=cost.toFixed(2);
+            document.querySelector('.js-display').innerHTML=`TOTAL COST $${cost}`;
+
+        }
+    </script>
+</body>
+</html>

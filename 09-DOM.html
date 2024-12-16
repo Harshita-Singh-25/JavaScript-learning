@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    <head>
+        <title>trying DOM</title>
+    </head>
+    <body>
+         <button>yo yo honey</button><br>
+         <button class="js-button">badshah</button><br>
+         <button class="js-button">raftar</button><br>
+         <p>document.body this means it converts the the body of HTML IN AN OBJECT which can be accessed and modified by javascript</p><p>when an HTML Element is inside javascript it is a javascrip object</p>
+         <script>
+            //document.body.innerHTML="hello";
+            document.title ='learning DOM';
+            console.log(document.body);
+            console.log(typeof document.body);
+            console.log(document.body.innerHTML);
+            console.log(typeof document.body.innerHTML);
+            // FUNCTIONS OF DOCUMENT OBJECT ARE:
+            console.log(document.querySelector('button'));
+            //document.querySelector('button') is equal to document.body
+            document.querySelector('button').innerHTML="changed";
+            console.log(document.querySelector('.js-button'));
+            const buttonElement =document.querySelectorAll('.js-button');
+            console.log(buttonElement);
+         </script>         
+    </body>
+</html>
