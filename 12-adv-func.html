@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <p>FUNCTIONS ARE values and can be saved in a variable</p>
+    <script>
+        const funky1= function greeting(){
+            console.log('Hello');
+        }
+        console.log(funky1);
+        console.log(typeof funky1);
+        funky1();
+        //so as long as we call the function with another name so we dont need to name it again ; i.e it is same
+        const fun1 = function(){
+            console.log('Hello');
+        }
+
+        //WE CAN PASS A FUNCTION IN ANOTHER FUNCTION
+        function run(parameter){
+            parameter();
+        }
+
+        run(function(){
+            console.log(6+3);
+        })
+        //the function which is passed in , is called a CALLBACK FUNCTION
+        let i=0;
+        setTimeout(function(){
+            i++;
+            console.log(`it is ${3*i} seconds`);
+        }, 3000);
+
+        setInterval(function(){
+            i++;
+            console.log(`it is ${3*i} seconds`);
+        },3000);
+
+        console.log(`yo-yo ${i}`);
+    </script>
+</body>
+</html>
